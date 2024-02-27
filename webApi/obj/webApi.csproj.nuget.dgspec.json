@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ekbana/RiderProjects/WebApplication1/webApi/webApi.csproj": {}
+    "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj": {}
   },
   "projects": {
-    "/Users/ekbana/RiderProjects/WebApplication1/webApi/webApi.csproj": {
+    "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ekbana/RiderProjects/WebApplication1/webApi/webApi.csproj",
+        "projectUniqueName": "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "/Users/ekbana/RiderProjects/WebApplication1/webApi/webApi.csproj",
+        "projectPath": "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj",
         "packagesPath": "/Users/ekbana/.nuget/packages/",
-        "outputPath": "/Users/ekbana/RiderProjects/WebApplication1/webApi/obj/",
+        "outputPath": "/Users/ekbana/RiderProjects/WebApi/webApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/ekbana/.nuget/NuGet/NuGet.Config"

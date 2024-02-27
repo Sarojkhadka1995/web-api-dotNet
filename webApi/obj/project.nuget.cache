@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aVYq2b56B5rxANq7maX9oRDJE9tiTZD5JK+/kZOUAR8k/u6xIdzn5ZtAtmwTvbje7j1Y5E/MukkN/wYqpr+6tw==",
+  "dgSpecHash": "GsM/GVqEL1zO+7Vkf9EPmI0ghGAyvQ25GMHj9cBxqm3GvXlPvLDU6c5Gqi5TuYtbzwuHKW6FRB1niKHZqYsUhg==",
   "success": true,
-  "projectFilePath": "/Users/ekbana/RiderProjects/WebApplication1/webApi/webApi.csproj",
+  "projectFilePath": "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj",
   "expectedPackageFiles": [
     "/Users/ekbana/.nuget/packages/microsoft.aspnetcore.openapi/8.0.0/microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
     "/Users/ekbana/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

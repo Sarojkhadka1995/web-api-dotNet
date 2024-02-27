@@ -15,9 +15,9 @@ public class ShirtController : ControllerBase
 
     [HttpGet("/{id}")]
     
-    public string GetShirtsId(int id)
+    public string GetShirtsById(int id, [FromHeader(Name = "color")] string color)
     {
-        return $"Reading shirt :{id}";
+        return $"Reading shirt :{id}, color :{color}";
         
     }
 
@@ -29,9 +29,9 @@ public class ShirtController : ControllerBase
     }
 
     [HttpPut("/{id}")]
-    public string UpdateShirt(int id)
+    public string UpdateShirt(int id, [FromQuery] string color)
     {
-        return $"Update shirt : {id}";
+        return $"Update shirt : {id}, color : {color}";
     }
 
     [HttpDelete("/{id}")]
