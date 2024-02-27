@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Filters;
 using WebApplication1.Models;
+using WebApplication1.Models.Repositories;
 
 namespace WebApplication1.controllers;
 
@@ -7,33 +9,17 @@ namespace WebApplication1.controllers;
 [Route("api/[controller]")]
 public class ShirtController : ControllerBase
 {
-    private List<Shirt> shirts = new List<Shirt>()
-    {
-        new Shirt { ShirtId = 1, Brand = "Brand1", Color = "Blue", Gender = "Male", Price = 80, Size = 10 },
-        new Shirt { ShirtId = 2, Brand = "My Brand2", Color = "Yellow", Gender = "Male", Price = 100, Size = 11 },
-        new Shirt { ShirtId = 3, Brand = "My Brand3", Color = "Red", Gender = "Male", Price = 70, Size = 9 },
-        new Shirt { ShirtId = 4, Brand = "Brand4", Color = "Black", Gender = "Female", Price = 60, Size = 7 },
-        new Shirt { ShirtId = 5, Brand = "Brand5", Color = "Blue", Gender = "Female", Price = 40, Size = 6 },
-    };
-    
     [HttpGet]
-    public string GetShirts()
+    public IActionResult GetShirts()
     {
-        return "Reading shirts";
+        return Ok("Reading shirts");
     }
 
-    [HttpGet("/{id}")]
-    
+    [HttpGet("{id}")]
+    [Shirt_ValidateShirtIdFilter]
     public IActionResult GetShirtsById(int id)
     {
-        if (id <= 0) return BadRequest(); 
-        var shirt = shirts.FirstOrDefault(x => x.ShirtId == id);
-        if (shirt == null)
-            return NotFound();
-        
-        return Ok(shirt);
-        
-        
+        return Ok(ShirtRepository.GetShirtById(id));
     }
 
     [HttpPost]
@@ -43,13 +29,13 @@ public class ShirtController : ControllerBase
         return Ok("Post shirt");
     }
 
-    [HttpPut("/{id}")]
+    [HttpPut("{id}")]
     public IActionResult UpdateShirt(int id, [FromQuery] string color)
     {
         return Ok($"Update shirt : {id}, color : {color}");
     }
 
-    [HttpDelete("/{id}")]
+    [HttpDelete("{id}")]
     public IActionResult DeleteShirt(int id)
     {
         return Ok($"Delete shirt: {id}");
