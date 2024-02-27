@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Models;
 
 namespace WebApplication1.controllers;
 
@@ -23,7 +24,7 @@ public class ShirtController : ControllerBase
 
     [HttpPost]
     
-    public string CreateShirt()
+    public string CreateShirt([FromBody] Shirt shirt)
     {
         return "Post shirt";
     }
