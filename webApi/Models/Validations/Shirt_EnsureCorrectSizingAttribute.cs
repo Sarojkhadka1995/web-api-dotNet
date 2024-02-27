@@ -21,7 +21,7 @@ public class Shirt_EnsureCorrectSizingAttribute :ValidationAttribute
             }
             else if(shirt.Gender.Equals("female", StringComparison.OrdinalIgnoreCase) && shirt.Size < 6)
             {
-                return new ValidationResult("For Female, the size has to be less then 6");
+                return new ValidationResult("For Female, the size has to be greater then 6");
             }
         }
         return ValidationResult.Success;
