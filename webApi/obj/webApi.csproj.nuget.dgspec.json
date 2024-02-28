@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj": {}
+    "/Users/sarojkhadka/Projects/C#/web-api-dotNet/webApi/webApi.csproj": {}
   },
   "projects": {
-    "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj": {
+    "/Users/sarojkhadka/Projects/C#/web-api-dotNet/webApi/webApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj",
+        "projectUniqueName": "/Users/sarojkhadka/Projects/C#/web-api-dotNet/webApi/webApi.csproj",
         "projectName": "webApi",
-        "projectPath": "/Users/ekbana/RiderProjects/WebApi/webApi/webApi.csproj",
-        "packagesPath": "/Users/ekbana/.nuget/packages/",
-        "outputPath": "/Users/ekbana/RiderProjects/WebApi/webApi/obj/",
+        "projectPath": "/Users/sarojkhadka/Projects/C#/web-api-dotNet/webApi/webApi.csproj",
+        "packagesPath": "/Users/sarojkhadka/.nuget/packages/",
+        "outputPath": "/Users/sarojkhadka/Projects/C#/web-api-dotNet/webApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/ekbana/.nuget/NuGet/NuGet.Config"
+          "/Users/sarojkhadka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/ekbana/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/sarojkhadka/.dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

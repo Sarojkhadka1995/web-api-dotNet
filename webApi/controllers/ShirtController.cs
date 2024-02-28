@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Filters;
+using WebApplication1.Filters.ExceptionFilters;
 using WebApplication1.Models;
 using WebApplication1.Models.Repositories;
 
@@ -34,14 +35,21 @@ public class ShirtController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult UpdateShirt(int id, [FromQuery] string color)
-    {
-        return Ok($"Update shirt : {id}, color : {color}");
+    [Shirt_ValidateShirtIdFilter]
+    [Shirt_ValidateUpdateShirtFilter]
+    [Shirt_HandleUpdateExceptionsFilter]
+    public IActionResult UpdateShirt(int id, [FromBody] Shirt shirt)
+    { 
+        ShirtRepository.UpdateShirt(shirt);
+        return NoContent();
     }
 
     [HttpDelete("{id}")]
+    [Shirt_ValidateShirtIdFilter]
     public IActionResult DeleteShirt(int id)
     {
-        return Ok($"Delete shirt: {id}");
+        var shirt = ShirtRepository.GetShirtById(id);
+        ShirtRepository.DeleteShirt(id);
+        return Ok(shirt);
     }
 }

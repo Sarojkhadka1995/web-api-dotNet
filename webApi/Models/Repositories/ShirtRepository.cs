@@ -46,4 +46,22 @@ public static class ShirtRepository
         shirt.ShirtId = newShirtId;
         shirts.Add(shirt);
     }
+
+    public static void UpdateShirt(Shirt shirt)
+    {
+        var shirtToUpdate = shirts.First(x => x.ShirtId == shirt.ShirtId);
+        shirtToUpdate.Brand = shirt.Brand;
+        shirtToUpdate.Color = shirt.Color;
+        shirtToUpdate.Size = shirt.Size;
+        shirtToUpdate.Price = shirt.Price;
+    }
+
+    public static void DeleteShirt(int shirtId)
+    {
+        var shirt = GetShirtById(shirtId);
+        if (shirt != null)
+        {
+            shirts.Remove(shirt);
+        }
+    }
 }
