@@ -5,7 +5,6 @@ namespace WebApplication1.Models;
 
 public class Shirt
 {
-    [Required]
     public int ShirtId { get; set; }
     
     [Required]
@@ -15,7 +14,7 @@ public class Shirt
     public double Price { get; set; }
     
     [Required]
-    public string Color { get; set; }
+    public string? Color { get; set; }
     
     [Shirt_EnsureCorrectSizing]
     public int? Size { get; set; }

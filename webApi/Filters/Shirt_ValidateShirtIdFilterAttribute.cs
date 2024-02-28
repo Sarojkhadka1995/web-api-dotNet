@@ -17,12 +17,21 @@ public class Shirt_ValidateShirtIdFilterAttribute :ActionFilterAttribute
             if (shirtId.Value <= 0)
             {
                 context.ModelState.AddModelError("ShirtId","ShirtId is invalid");
-                context.Result = new BadRequestObjectResult(context.ModelState);
+                var problemDetail = new ValidationProblemDetails(context.ModelState)
+                {
+                    Status = StatusCodes.Status400BadRequest
+                };
+                
+                context.Result = new BadRequestObjectResult(problemDetail);
             }
             else if (!ShirtRepository.ShirtExists(shirtId.Value))
             {
                 context.ModelState.AddModelError("ShirtId","Shirt doesnot exist.");
-                context.Result = new NotFoundObjectResult(context.ModelState);
+                var problemDetail = new ValidationProblemDetails(context.ModelState)
+                {
+                    Status = StatusCodes.Status404NotFound
+                };
+                context.Result = new NotFoundObjectResult(problemDetail);
             }
         }
     }

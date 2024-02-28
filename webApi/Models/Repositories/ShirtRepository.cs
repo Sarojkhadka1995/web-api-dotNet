@@ -11,6 +11,10 @@ public static class ShirtRepository
         new Shirt { ShirtId = 5, Brand = "Brand5", Color = "Blue", Gender = "Female", Price = 40, Size = 6 },
     };
 
+    public static List<Shirt> GetShirts()
+    {
+        return shirts;
+    }
     public static bool ShirtExists(int id)
     {
         return shirts.Any(x => x.ShirtId == id);
@@ -19,5 +23,27 @@ public static class ShirtRepository
     public static Shirt? GetShirtById(int id)
     {
         return shirts.FirstOrDefault(x => x.ShirtId == id);
+    }
+    
+    public static Shirt? GetShirtByProperites(string?  brand, string? gender, string? color, int? size)
+    {
+        return shirts.FirstOrDefault(x =>
+            !string.IsNullOrWhiteSpace(brand) &&
+            !string.IsNullOrWhiteSpace(x.Brand) &&
+            x.Brand.Equals(brand, StringComparison.OrdinalIgnoreCase) &&
+            !string.IsNullOrWhiteSpace(gender) &&
+            !string.IsNullOrWhiteSpace(x.Gender) &&
+            x.Gender.Equals(gender, StringComparison.OrdinalIgnoreCase) &&
+            !string.IsNullOrWhiteSpace(color) &&
+            !string.IsNullOrWhiteSpace(x.Color) &&
+            x.Color.Equals(color, StringComparison.OrdinalIgnoreCase) &&
+            size.HasValue && x.Size.HasValue && size.Value == x.Size.Value
+        );
+    }
+    public static void AddShirts(Shirt shirt)
+    {
+        int newShirtId = shirts.Max(x => x.ShirtId) + 1;
+        shirt.ShirtId = newShirtId;
+        shirts.Add(shirt);
     }
 }
